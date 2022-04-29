@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { ContextComponent } from "./components/ContextComponent";
+import { RecursiveComponent } from "./components/RecursiveComponent";
+import { RefComponent } from "./components/RefComponent";
+import { TestContext } from "./context/TestContext";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // <RecursiveComponent
+    //   data={{
+    //     name: "Name",
+    //     job: {
+    //       profession: "prof",
+    //       companies: ["something", "Something Else"],
+    //     },
+    //   }}
+    // />
+
+    // <RefComponent />
+
+    <TestContext.Provider value={[42, 10, 1304]}>
+      <ContextComponent />
+    </TestContext.Provider>
   );
 }
 
